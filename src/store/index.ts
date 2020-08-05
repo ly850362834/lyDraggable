@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import comsOption from './comsOption/comsOption'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -11,5 +12,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+      comsOption
   }
 })

@@ -28,13 +28,13 @@
             <el-col :span="12">
                 <el-form ref="form" label-width="80px" label="活动区域">
                     <div class="draggableComBg">
-                        <draggableCom :list="list1"></draggableCom>
+                        <draggableCom :list="formList"></draggableCom>
                     </div>
                 </el-form>
             </el-col>
             <el-col :span="6">
                 <div>
-                    <options></options>
+                    <options :comInformation="comInformation"></options>
                 </div>
             </el-col>
         </el-row>
@@ -45,36 +45,34 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import draggable from 'vuedraggable'
-import HelloWorld from "../HelloWorld.vue";
 import { createdComponents } from "@/commonApi/components";
 import render from "@/components/render/render.vue";
 import options from "@/components/mains/options/options.vue"
+import { Getter, Action,Mutation, State, namespace } from "vuex-class"
+const comsOption = namespace('comsOption');
 @Component({
   components: {
     draggable,
-    HelloWorld,
     render,
     options
   }
 })
 export default class Mains extends Vue {
-  sss={name:333};
+  @comsOption.State(state => state.formList) formList: any;
+    @comsOption.State(state => state.comInformation) comInformation: any;
+  @comsOption.Mutation('setOptions') setOptions: any;
   falgs = "article";
   disabled = false;
   list1 = [];
   list2: any[] = [];
+  // get mapState([
+  //
+  //  ])
   end(ev: any,index: any) {
+      //清除引用关系
       this.list2=[];
-      this.list2=[...createdComponents()]
-      console.log(ev,index)
-    // if (ev.to.className === "dragArea11") {
-    //   this.$set(this.list2[ev.oldIndex], "flag", true);
-    // }
-    // if (this.list1>)
-    // console.log(666)
-    // if (this.list1.length>1){
-    //     this.list1[1].option.children[0].list=[]
-    // }
+      this.list2=[...createdComponents()];
+      // console.log(ev,index)
   }
   choose(ev: any,index: any){
       console.log(ev,777,index)
@@ -88,10 +86,12 @@ export default class Mains extends Vue {
     //   return value.id === id;
     // });
     // this.$set(q, "flag", false);
-    console.log(this.list1)
+    // console.log(this.list1)
   }
   created(){
-    this.list2=[...createdComponents()]
+      // console.log(this.list);
+      // this.setOptions();
+        this.list2=[...createdComponents()]
     //   console.log(createdComponents())
   }
 }

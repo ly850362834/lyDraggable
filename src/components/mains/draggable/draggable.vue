@@ -2,6 +2,7 @@
   <draggable
     :list="list"
     :options="{group:'article', disabled: disabled}"
+    chosenClass="sortable-chosen"
     @start="start22"
     @end="end22"
     @add='onadd'
@@ -10,7 +11,7 @@
     style="min-height:100%"
   >
     <template v-for="(coms, index) in list">
-      <render :key="index" :coms="coms"></render>
+      <render :key="index" :coms="coms" :data-com="coms.comId"></render>
     </template>
   </draggable>
 </template>
@@ -18,6 +19,8 @@
 import render from "@/components/render/render.vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import draggable from "vuedraggable";
+import { Getter, Action,Mutation, State, namespace } from "vuex-class"
+const comsOption = namespace('comsOption');
 @Component({
   components: {
     draggable,
@@ -25,17 +28,31 @@ import draggable from "vuedraggable";
   }
 })
 export default class Render extends Vue {
+  @comsOption.State(state => state.formList) formList: any;
+  @comsOption.Mutation('setOptions') setOptions: any;
   @Prop(Array) list!: any[];
-  @Prop() private msg!: string;
   disabled = false;
   onchange(index1: any,index2: any){
-    console.log(index1,index2,'onchange')
+    // console.log(index1)
+    const keyArr=Object.keys(index1);
+    switch(keyArr[0]) {
+      case 'added':
+        index1[keyArr[0]].element.comId=new Date().getTime(); //生成comId
+        break;
+      default:
+    }
+    this.$forceUpdate();
+    // console.log(this.list,999)
+    // console.log(keyArr)
   }
-  onchoose(index1: any,index2: any){
-    console.log(index1,index2,'choose')
+  //选择节点
+  onchoose(dom: any){
+      const comId=dom.item.dataset.com;
+      console.log(this.formList);
+      console.log(dom.item.dataset.com);
   }
   onadd(index1: any,index2: any){
-    console.log(index1,index2,'add')
+    // console.log(index1,index2,'add')
   }
   start22(event: any) {
     // console.log(event)
@@ -44,9 +61,15 @@ export default class Render extends Vue {
   }
   end22(ev: any) {
     // this.falgs = "article";
-    console.log(this.list,666666)
+    // console.log(this.list,666666)
   }
 }
 </script>
 <style lang='less'>
+// .sortable-chosen{
+//   position: relative;
+//   top:5px;
+//   background: red;
+//   border: 10px black solid !important;
+// }
 </style>

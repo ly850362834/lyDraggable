@@ -3,6 +3,7 @@
       <draggable
         :list="list2"
         :options="{group:{name: falgs,pull:'clone'},filter: '.undraggable', sort: false}"
+        touchStartThreshold="20"
         @end="end"
         @choose="choose"
         @start="onStart"

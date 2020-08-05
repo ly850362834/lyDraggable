@@ -18,7 +18,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 })
 export default class Render extends Vue {
   @Prop(Array) list!: any[];
-  @Prop() private msg!: string;
+  @Prop(Object) comInformation!: {};
   input1='123';
   start22(event: any) {
     // console.log(event)

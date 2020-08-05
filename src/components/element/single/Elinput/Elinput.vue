@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :data-com="123">
       <el-form-item label="活动名称">
         <el-input v-model="val" placeholder="请输入内容"></el-input>
       </el-form-item>
