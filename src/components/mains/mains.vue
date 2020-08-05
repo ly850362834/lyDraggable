@@ -59,7 +59,7 @@ const comsOption = namespace('comsOption');
 })
 export default class Mains extends Vue {
   @comsOption.State(state => state.formList) formList: any;
-    @comsOption.State(state => state.comInformation) comInformation: any;
+  @comsOption.State(state => state.comInformation) comInformation: any;
   @comsOption.Mutation('setOptions') setOptions: any;
   falgs = "article";
   disabled = false;

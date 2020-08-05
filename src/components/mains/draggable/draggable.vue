@@ -48,6 +48,8 @@ export default class Render extends Vue {
   //选择节点
   onchoose(dom: any){
       const comId=dom.item.dataset.com;
+      this.setOptions(comId);
+      // this
       console.log(this.formList);
       console.log(dom.item.dataset.com);
   }

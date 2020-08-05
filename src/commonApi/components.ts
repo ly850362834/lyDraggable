@@ -10,7 +10,7 @@ function createdComponents(): any[] {
     //输入框
     class Input extends Common {
         option={};
-        value: any;
+        value='123';
         constructor(name: string,type: string,option?: {}){
             super (name,type);
             this.option={};
