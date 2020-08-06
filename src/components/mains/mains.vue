@@ -75,10 +75,10 @@ export default class Mains extends Vue {
       // console.log(ev,index)
   }
   choose(ev: any,index: any){
-      console.log(ev,777,index)
+      // console.log(ev,777,index)
   }
   onStart(ev: any){
-      console.log(ev,666)
+      // console.log(ev,666)
   }
   handleDel(index: any, id: any) {
     this.list1.splice(index, 1);

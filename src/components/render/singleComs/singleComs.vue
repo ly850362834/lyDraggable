@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Elinput v-if="coms.type=='input'"></Elinput>
+      <Elinput v-if="coms.type=='input'" :coms="coms"></Elinput>
   </div>
 </template>
 
@@ -13,7 +13,10 @@ import Elinput from "@/components/element/single/Elinput/Elinput.vue";
   }
 })
 export default class Render extends Vue {
-  @Prop(Object) coms: any;
+    @Prop(Object) coms: any;
+    created(){
+        // console.log(this.coms,111)
+    }
 }
 </script>
 

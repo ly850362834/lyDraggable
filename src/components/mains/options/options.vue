@@ -4,7 +4,7 @@
       <el-input placeholder="请输入内容" v-model="input1">
         <template slot="prepend">名称:</template>
       </el-input>
-      <el-input placeholder="请输入内容" v-model="input1">
+      <el-input placeholder="请输入内容" v-model="comInformation.value">
         <template slot="prepend">值:</template>
       </el-input>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div style="border:1px blue dotted;padding:2px">
     <singleComs :coms="coms" v-if="coms.type=='input'"></singleComs>
-    <layoutComs :coms="coms" v-if="coms.type=='gird'||coms.type=='girds'"></layoutComs>
+    <layoutComs :coms="coms" v-if="coms.type=='gird'"></layoutComs>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import layoutComs from "@/components/render/layoutComs/layoutComs.vue";
   }
 })
 export default class Render extends Vue {
-    @Prop(Object) coms: any;
+    @Prop(Object) coms!: any;
     created(): void{
         // console.log(this.sss.name);
         // this.sss.name='233'
