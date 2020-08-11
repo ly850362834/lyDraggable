@@ -1,4 +1,4 @@
-
+//获取表单内单一组件
 function getComsIndex(list: any[],comId: string) {
     let comsObj;
     const comsIndexEach=function(list: any[],comId: string) {

@@ -1,24 +1,21 @@
 <template>
   <div>
     <div class="options_Room">
-      <el-input placeholder="请输入内容" v-model="input1">
-        <template slot="prepend">名称:</template>
-      </el-input>
-      <el-input placeholder="请输入内容" v-model="comInformation.value">
-        <template slot="prepend">值:</template>
-      </el-input>
+      <ElementOption :coms="coms"></ElementOption>
     </div>
   </div>
 </template>
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
+import ElementOption from "@/components/mains/options/element/elementOption.vue"
 @Component({
   components: {
+      ElementOption
   }
 })
 export default class Render extends Vue {
   @Prop(Array) list!: any[];
-  @Prop(Object) comInformation!: {};
+  @Prop(Object) coms!: {};
   input1='123';
   start22(event: any) {
     // console.log(event)

@@ -34,7 +34,7 @@
             </el-col>
             <el-col :span="6">
                 <div>
-                    <options :comInformation="comInformation"></options>
+                    <options :coms="comInformation"></options>
                 </div>
             </el-col>
         </el-row>

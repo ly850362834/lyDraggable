@@ -7,9 +7,9 @@ const state: any={
 
 const mutations: any= {
     setOptions(states: any,comId: string){
-        console.log(states,comId)
+        // console.log(states,comId)
         states.comInformation=getComsIndex(states.formList,comId);
-        console.log(states.comInformation,999)
+        // console.log(states.comInformation,999)
         // states.comInformation.val='666';
         // console.log(getComsIndex(states.formList,comId))
         // states.formList.map(val=>{
