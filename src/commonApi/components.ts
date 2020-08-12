@@ -6,6 +6,8 @@ function createdComponents(): any[] {
             this.name=name;
             this.type=type;
         }
+
+
     }
     //输入框
     class Input extends Common {
