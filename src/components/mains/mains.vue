@@ -18,6 +18,7 @@
                                 class="components"
                             >
                                 <div class="componentsCom">
+                                    <!--1111-->
                                     <div class="componentsCom_Name">{{element.name}}</div>
                                 </div>
                             </div>
@@ -64,14 +65,14 @@ export default class Mains extends Vue {
   falgs = "article";
   disabled = false;
   list1 = [];
-  list2: any[] = [];
+  list2: any;
   // get mapState([
   //
   //  ])
   end(ev: any,index: any) {
       //清除引用关系
-      this.list2=[];
-      this.list2=[...createdComponents()];
+      this.list2={};
+      this.list2={...createdComponents()};
       // console.log(ev,index)
   }
   choose(ev: any,index: any){
@@ -91,7 +92,8 @@ export default class Mains extends Vue {
   created(){
       // console.log(this.list);
       // this.setOptions();
-        this.list2=[...createdComponents()]
+      //给 list2 渲染出值;
+        this.list2={...createdComponents()}
     //   console.log(createdComponents())
   }
 }

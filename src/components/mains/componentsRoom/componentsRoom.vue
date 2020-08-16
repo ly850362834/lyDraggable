@@ -26,15 +26,21 @@ import render from "@/components/render/render.vue";
     draggable,
     render
   }
-})
+})\
+
+
+
+
+
+
 export default class ComponentsRoom extends Vue {
   falgs = "article";
   disabled = false;
   list1 = [];
-  list2: any[] = [];
+  list2: any;
   end(ev: any,index: any) {
-      this.list2=[];
-      this.list2=[...createdComponents()]
+      this.list2={};
+      this.list2={...createdComponents()}
       console.log(ev,index)
     // if (ev.to.className === "dragArea11") {
     //   this.$set(this.list2[ev.oldIndex], "flag", true);
@@ -60,7 +66,7 @@ export default class ComponentsRoom extends Vue {
     console.log(this.list1)
   }
   created(){
-    this.list2=[...createdComponents()]
+    this.list2={...createdComponents()}
     //   console.log(createdComponents())
   }
 }
