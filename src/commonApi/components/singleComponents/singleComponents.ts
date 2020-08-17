@@ -23,7 +23,7 @@ function createdSingleComponents(): any[]{
         }
     }
     const singleComponents: any[]=[];
-    const input = new Input('input','comId','single');
+    const input = new Input('input','输入框','single');
     singleComponents.push(input);
     return singleComponents
 }

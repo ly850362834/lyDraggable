@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span='12' v-for="(item,index) in coms.option.children" :key="index" class="colBorder">
+      <el-col :span='12' v-for="(item,index) in coms.children" :key="index" class="colBorder">
         <draggableCom :list="item.list" style="min-height:50px"></draggableCom>
       </el-col>
     </el-row>
