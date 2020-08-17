@@ -27,7 +27,6 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { createdComponents } from "@/commonApi/components";
     import options from "@/components/mains/options/options.vue"
     import { Getter, Action,Mutation, State, namespace } from "vuex-class"//vueX-class装饰器 配合typescript使用
     import componentsRoom from "./componentsRoom/componentsRoom.vue"

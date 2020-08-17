@@ -16,16 +16,6 @@ import ElementOption from "@/components/mains/options/element/elementOption.vue"
 export default class Render extends Vue {
   @Prop(Array) list!: any[];
   @Prop(Object) coms!: {};
-  input1='123';
-  start22(event: any) {
-    // console.log(event)
-    // this.falgs = "222222";
-    // console.log(this.list,)
-  }
-  end22(ev: any) {
-    // this.falgs = "article";
-    console.log(this.list,666666)
-  }
 }
 </script>
 <style lang='less'>
