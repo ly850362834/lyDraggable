@@ -1,6 +1,6 @@
 //基本组件构造函数与继承
 function createdSingleComponents(): any[]{
-    //简单组件类
+    //简单组件基本类
     class SingleComponents{
         public value: any;//组件值
         public comId: string;//组件Id，后面在初次拖入会进行赋值
@@ -17,6 +17,7 @@ function createdSingleComponents(): any[]{
             this.comType=comType;
         }
     }
+    //input框继承
     class Input extends SingleComponents{
         constructor(type: string,name: string,comType: string) {
             super(type,name,comType)

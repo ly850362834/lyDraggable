@@ -1,4 +1,5 @@
 function createdLayoutComponents(): any[]{
+    //布局容器组件基本类
     class LayoutComponents{
         children: any[];//布局容器组件
         public comId: string;//组件Id，后面在初次拖入会进行赋值
@@ -18,7 +19,7 @@ function createdLayoutComponents(): any[]{
     class Gird extends LayoutComponents{
         constructor(type: string,name: string,comType: string){
             super(type,name,comType);
-            const children=[{list:[]}]
+            const children=[{list:[]}];
             this.children=children;
         }
     }
