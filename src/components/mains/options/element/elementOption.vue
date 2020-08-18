@@ -1,7 +1,7 @@
 <template>
     <div>
         <ElinputOptions :coms="coms" v-if="coms.type=='input'"></ElinputOptions>
-        <ElgirdOptions :coms="coms" v-if="coms.type=='gird'"></ElgirdOptions>
+        <ElgirdOptions :coms="coms" v-else-if="coms.type=='gird'"></ElgirdOptions>
     </div>
 </template>
 <script lang='ts'>
@@ -15,7 +15,7 @@
         }
     })
     export default class ElementOption extends Vue {
-        @Prop(Object) coms!: {};
+        @Prop(Object) coms!: any;
     }
 </script>
 <style lang='less'>

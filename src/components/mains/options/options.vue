@@ -13,7 +13,7 @@ import ElementOption from "@/components/mains/options/element/elementOption.vue"
       ElementOption
   }
 })
-export default class Render extends Vue {
+export default class Options extends Vue {
   @Prop(Array) list!: any[];
   @Prop(Object) coms!: {};
 }

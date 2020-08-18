@@ -1,10 +1,8 @@
 <template>
     <div>
-        <div>
-            <Select v-model="childValue" style="width:200px" @on-change="onChange">
-                <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
-        </div>
+        <Select v-model="childValue" style="width:200px" @on-change="onChange()">
+            <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
+        </Select>
     </div>
 </template>
 
@@ -38,33 +36,37 @@
                 value:8,
                 label:8
             }
-        ];
+        ]
         onChange(val){
-            console.log(this.childValue)
+            console.log(this.coms);
+            debugger
             // const indexArray: number[]=[];
-            // switch (this.coms.children.length<val) {
-            //     case true:
-            //         for (let i = 0;i<val;i++) {
-            //             const obj = {
-            //                 list:[]
-            //             };
-            //             this.coms.children.push(obj);
-            //         }
-            //         break;
-            //     case false:
-            //         for (let i = 0;i<this.coms.children.length;i++) {
-            //             if (this.coms.children[i].list.length==0) {
-            //                 for (let j = i+1;j<this.coms.children.length;i++) {
-            //                     if (this.coms.children[j].list.length!=0) {
-            //                         this.coms.children[i].list=[...this.coms.children[j].list];
-            //                         this.coms.children[j].list=[];
-            //                         break;
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //         break
-            // }
+            switch (this.coms.children.length<val) {
+                case true:
+                    for (let i = 0;i<val;i++) {
+                        const obj = {
+                            list:[]
+                        };
+                        this.coms.children.push(obj);
+                    }
+                    break;
+                case false:
+                    for (let i = 0;i<this.coms.children.length;i++) {
+                        if (this.coms.children[i].list.length==0) {
+                            for (let j = i+1;j<this.coms.children.length;i++) {
+                                if (this.coms.children[j].list.length!=0) {
+                                    this.coms.children[i].list=[...this.coms.children[j].list];
+                                    this.coms.children[j].list=[];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break
+            }
+        }
+        created(){
+            console.log(7877)
         }
     }
 </script>
