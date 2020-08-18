@@ -19,29 +19,31 @@
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import draggable from 'vuedraggable'
-    import CreatedComponents from "@/commonApi/components";
+    import CreatedComponents from "@/commonApi/components";//导入类
     import render from "@/components/render/render.vue";
     import { Getter, Action,Mutation, State, namespace } from "vuex-class"//vueX 配合typescript使用
     const comsOption = namespace('comsOption');
+    // interface ComponentsInterface {
+    //     readonly single: any;
+    //     readonly layout: any;
+    // }
     @Component({
         components: {
             draggable,
             render,
         }
     })
-    interface ComponentsInterface {
-        readonly single: any;
-        readonly layout: any;
-    }
-    export default class Mains extends Vue {
+    export default class ComponentsRoom extends Vue {
+        @Prop(String) type;//组件传值接收类别
         falgs = "article";
-        list2: any;
-        components:{};
+        list2;
+        //在组件拖拽结束后的回调函数触发事件
         end(ev: any,index: any) {
             //清除引用关系如果这个步骤不写，生成的模板引擎会有潜引用的问题
             this.list2=[];
-            this.list2=new CreatedComponents();//赋值简单组件 将其封装成一个方法
-
+            //直接数组清空不会引起重渲染，需要使用特定方法splice或者$set或者深度监听
+            this.$forceUpdate();
+            this.list2=new CreatedComponents()[this.type];//赋值简单组件 将其封装成一个方法
         }
         choose(ev: any,index: any){
             // console.log(ev,777,index)
@@ -50,9 +52,7 @@
             // console.log(ev,666)
         }
         created(){
-            //给 list2 渲染出值;
-            this.components=new CreatedComponents();
-            this.list2=this.components.single;//简单组件
+            this.list2=new CreatedComponents()[this.type];//简单组件
         }
     }
 </script>
@@ -69,7 +69,6 @@
         padding-right: 10px;
         .components{
             display: inline-block;
-            // flex-direction: column;
         }
         .componentsCom{
             width: 100px;

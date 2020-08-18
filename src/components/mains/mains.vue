@@ -4,7 +4,10 @@
             <!--//组件容器-->
             <el-col :span="6">
                 <div>
-                    <componentsRoom></componentsRoom>
+                    <!--基本组件构造器-->
+                    <componentsRoom :type="'single'"></componentsRoom>
+                    <!--布局容器组件构造器-->
+                    <componentsRoom :type="'layout'"></componentsRoom>
                 </div>
             </el-col>
             <!--//渲染模板-->
@@ -38,7 +41,7 @@
         }
     })
     export default class Mains extends Vue {
-        @comsOption.State(state => state.formList) formList: any;//VueX组件;
+        @comsOption.State(state => state.formList) formList: any;//组件列表;
         @comsOption.State(state => state.comInformation) comInformation: any;//单一组件配置信息属性传递
         @comsOption.Mutation('setOptions') setOptions: any;
     }
@@ -46,33 +49,33 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='less'>
-    .render{
-        height: 700px;
-    }
-    .componentsRoom{
-        // height: 100%;
-        border: 5px red solid;
-        padding-left: 10px;
-        padding-right: 10px;
-        .components{
-            display: inline-block;
-            // flex-direction: column;
-        }
-        .componentsCom{
-            width: 100px;
-            height: 100px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content:center;
-            color: white;
-            .componentsCom_Name{
-                width: 100%;
-                height: 100%;
-                background: black;
-                border-radius: 2px;
-            }
-        }
-    }
+    /*.render{*/
+        /*height: 700px;*/
+    /*}*/
+    /*.componentsRoom{*/
+        /*// height: 100%;*/
+        /*border: 5px red solid;*/
+        /*padding-left: 10px;*/
+        /*padding-right: 10px;*/
+        /*.components{*/
+            /*display: inline-block;*/
+            /*// flex-direction: column;*/
+        /*}*/
+        /*.componentsCom{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*padding: 10px;*/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content:center;*/
+            /*color: white;*/
+            /*.componentsCom_Name{*/
+                /*width: 100%;*/
+                /*height: 100%;*/
+                /*background: black;*/
+                /*border-radius: 2px;*/
+            /*}*/
+        /*}*/
+    /*}*/
 
 </style>
