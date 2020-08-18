@@ -1,14 +1,9 @@
 <template>
     <div>
         <div>
-            <el-select v-model="childValue" placeholder="请选择" @change="onChange">
-                <el-option
-                        v-for="item in options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                </el-option>
-            </el-select>
+            <Select v-model="childValue" style="width:200px" @on-change="onChange">
+                <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
         </div>
     </div>
 </template>
@@ -16,7 +11,7 @@
 <script lang="ts">
     import { Component, Prop, Vue } from "vue-property-decorator";
     export default class ElgirdOptions extends Vue{
-        @Prop(Object) coms!: {};
+        @Prop(Object) coms!: any;
         childValue=1;
         options=[
             {
@@ -43,10 +38,33 @@
                 value:8,
                 label:8
             }
-        ]
+        ];
         onChange(val){
             console.log(this.childValue)
-            // this.childValue=val;
+            // const indexArray: number[]=[];
+            // switch (this.coms.children.length<val) {
+            //     case true:
+            //         for (let i = 0;i<val;i++) {
+            //             const obj = {
+            //                 list:[]
+            //             };
+            //             this.coms.children.push(obj);
+            //         }
+            //         break;
+            //     case false:
+            //         for (let i = 0;i<this.coms.children.length;i++) {
+            //             if (this.coms.children[i].list.length==0) {
+            //                 for (let j = i+1;j<this.coms.children.length;i++) {
+            //                     if (this.coms.children[j].list.length!=0) {
+            //                         this.coms.children[i].list=[...this.coms.children[j].list];
+            //                         this.coms.children[j].list=[];
+            //                         break;
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //         break
+            // }
         }
     }
 </script>
