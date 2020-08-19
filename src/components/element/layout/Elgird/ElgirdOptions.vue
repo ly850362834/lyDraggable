@@ -13,16 +13,21 @@
         data:function () {
             return{
                 childValue:1,
-                options:[{label:1,value:1},{label:2,value:2}]
+                options:[{label:1,value:1},{label:2,value:2},{label:3,value:3},{label:4,value:4}]
             }
         },
         props:['coms'],
+        // computed:{
+        //     childValue:
+        // },
         methods:{
+            init(){
+                this.childValue=this.coms.length;
+            },
             onChange(val){
-                console.log(this.childValue);
                 switch (this.coms.children.length<val) {
                     case true:
-                        for (let i = 0;i<val;i++) {
+                        for (let i = this.coms.children.length-1;i<val-1;i++) {
                             const obj = {
                                 list:[]
                             };
@@ -32,7 +37,7 @@
                     case false:
                         for (let i = 0;i<this.coms.children.length;i++) {
                             if (this.coms.children[i].list.length==0) {
-                                for (let j = i+1;j<this.coms.children.length;i++) {
+                                for (let j = i+1;j<this.coms.children.length;j++) {
                                     if (this.coms.children[j].list.length!=0) {
                                         this.coms.children[i].list=[...this.coms.children[j].list];
                                         this.coms.children[j].list=[];
@@ -41,9 +46,14 @@
                                 }
                             }
                         }
+                        this.coms.children.splice(val);
                         break
                 }
             }
+        },
+        mounted(){
+            this.init();
+            console.log(this.childValue)
         }
     }
 </script>
