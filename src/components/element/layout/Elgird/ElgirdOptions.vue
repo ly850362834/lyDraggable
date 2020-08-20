@@ -1,15 +1,14 @@
 <template>
     <div>
-        <div>
-            <Select v-model="childValue" style="width:200px" @on-change="onChange">
-                <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
-        </div>
+        <Select v-model="childValue" style="width:200px" @on-change="onChange">
+            <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
+        </Select>
     </div>
 </template>
 
 <script type="text/javascript">
     export default {
+        name:"ElgirdOption",
         data:function () {
             return{
                 childValue:1,
@@ -20,9 +19,15 @@
         // computed:{
         //     childValue:
         // },
+        //mounted阶段配合异步即可访问props
+        mounted(){
+            this.init();
+        },
         methods:{
             init(){
-                this.childValue=this.coms.length;
+                setTimeout(()=>{
+                    this.childValue=this.coms.children.length;
+                },0)
             },
             onChange(val){
                 switch (this.coms.children.length<val) {
@@ -50,10 +55,6 @@
                         break
                 }
             }
-        },
-        mounted(){
-            this.init();
-            console.log(this.childValue)
         }
     }
 </script>
