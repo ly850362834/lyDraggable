@@ -12,7 +12,7 @@
             </el-col>
             <!--//渲染模板-->
             <el-col :span="12">
-                <el-form ref="form" label-width="80px" label="活动区域">
+                <el-form ref="form" label-width="100px" label="活动区域">
                     <div class="draggableComBg">
                         <draggableCom :list="formList"></draggableCom>
                     </div>

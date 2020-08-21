@@ -1,6 +1,6 @@
 <template>
   <div>
-      <el-form-item label="活动名称">
+      <el-form-item :label="coms.label">
         <el-input v-model="coms.value" placeholder="请输入内容"></el-input>
       </el-form-item>
   </div>
