@@ -8,10 +8,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-@Component({})
+import SingleMixins from '../singleMixins';
+@Component({
+    mixins: [SingleMixins]
+})
 export default class Elinput extends Vue {
     // value=456;
-    @Prop(Object) coms: any;
+    // @Prop(Object) coms: any;
     created(){
         // console.log(this.coms,999999999999);
     }
