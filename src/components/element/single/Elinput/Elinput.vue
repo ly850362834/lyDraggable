@@ -1,6 +1,6 @@
 <template>
   <div>
-      <el-form-item :label="coms.label">
+      <el-form-item :label="coms.label" :required="coms.required">
         <el-input v-model="coms.value" placeholder="请输入内容"></el-input>
       </el-form-item>
   </div>

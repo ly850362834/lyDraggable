@@ -2,6 +2,11 @@
     <div>
         <el-input v-model="coms.value" placeholder="请输入内容"></el-input>
         <el-input v-model="coms.label" placeholder="组件label"></el-input>
+        <el-switch
+                v-model="coms.required"
+                active-text="是否必填"
+                >
+        </el-switch>
     </div>
 </template>
 
