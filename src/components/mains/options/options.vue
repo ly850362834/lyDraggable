@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="options_Room">
-      <ElementOption :coms="coms"></ElementOption>
+      <el-tabs v-model="activeName">
+        <el-tab-pane label="组件信息" name="first">
+          <ElementOption :coms="coms"></ElementOption>
+        </el-tab-pane>
+        <el-tab-pane label="表单信息" name="second">配置管理</el-tab-pane>
+      </el-tabs>
     </div>
   </div>
 </template>
@@ -16,6 +21,10 @@ import ElementOption from "@/components/mains/options/element/elementOption.vue"
 export default class Options extends Vue {
   @Prop(Array) list!: any[];
   @Prop(Object) coms!: {};
+  activeName='first';
+  created(){
+      console.log(this.activeName)
+  }
 }
 </script>
 <style lang='less'>

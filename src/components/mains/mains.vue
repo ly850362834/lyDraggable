@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import { Component, Prop, Vue , Provide} from 'vue-property-decorator';
     import options from "@/components/mains/options/options.vue"
     import { Getter, Action,Mutation, State, namespace } from "vuex-class"//vueX-class装饰器 配合typescript使用
     import componentsRoom from "./componentsRoom/componentsRoom.vue"
@@ -44,6 +44,10 @@
         @comsOption.State(state => state.formList) formList: any;//组件列表;
         @comsOption.State(state => state.comInformation) comInformation: any;//单一组件配置信息属性传递
         @comsOption.Mutation('setOptions') setOptions: any;
+        // @Provide() foo = '123';
+        // created(){
+        //     console.log(this.foo)
+        // }
     }
 </script>
 
