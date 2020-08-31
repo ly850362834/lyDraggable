@@ -1,7 +1,7 @@
 <template>
   <div style="border:1px blue dotted;padding:2px">
-    <singleComs :coms="coms" v-if="coms.type=='input'"></singleComs>
-    <layoutComs :coms="coms" v-if="coms.type=='gird'"></layoutComs>
+    <singleComs :coms="coms" v-if="coms.comType=='single'"></singleComs>
+    <layoutComs :coms="coms" v-if="coms.comType=='layout'"></layoutComs>
   </div>
 </template>
 

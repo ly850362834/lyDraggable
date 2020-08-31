@@ -28,9 +28,18 @@ function createdSingleComponents(): any[]{
             super(type,name,label)
         }
     }
-    const singleComponents: any[]=[];
+    //radio继承
+    class Radio extends SingleComponents{
+        constructor(type: string,name: string,label: string) {
+            super(type,name,label);
+        }
+    }
     const input = new Input('input','输入框','输入框');//input输入框
+    const radio= new Radio('radio','单选框','单选框');
+    const singleComponents: any[]=[];
     singleComponents.push(input);
+    singleComponents.push(radio);
     return singleComponents
 }
+//导出创造组件函数
 export {createdSingleComponents}

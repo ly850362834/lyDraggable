@@ -1,8 +1,13 @@
 <template>
     <div>
-        <Select v-model="childValue" style="width:200px" @on-change="onChange">
-            <Option v-for="item in options" :value="item.value" :key="item.value">{{ item.label }}</Option>
-        </Select>
+        <el-select v-model="childValue" placeholder="请选择" style="width:200px" @change="onChange">
+            <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+        </el-select>
     </div>
 </template>
 
@@ -55,6 +60,9 @@
                         break
                 }
             }
+        },
+        created(){
+            console.log(this.coms)
         }
     }
 </script>

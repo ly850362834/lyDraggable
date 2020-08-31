@@ -8,11 +8,9 @@
         @choose="choose"
         @start="onStart"
       >
-      <div class="components">
         <div v-for="element in list2" :key="element.id" :class="{undraggable : element.flag}" class="componentsCom">
           <div class="componentsCom_Name">{{element.name}}</div>
         </div>
-      </div>
       </draggable>
     </div>
 </template>
@@ -63,20 +61,25 @@
         height: 700px;
     }
     .componentsRoom{
+        width: 100%;
         // height: 100%;
         border: 5px red solid;
         padding-left: 10px;
         padding-right: 10px;
-        .components{
-            display: inline-block;
-        }
+        /*.components{*/
+            /*width: 100%;*/
+            /*!*background: red;*!*/
+            /*!*display: inline-block;*!*/
+        /*}*/
         .componentsCom{
-            width: 100px;
-            height: 100px;
+            display: inline-block;
+            width: 90px;
+            height: 90px;
             padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content:center;
+            /*margin-right: 10px;*/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content:center;*/
             color: white;
             .componentsCom_Name{
                 width: 100%;

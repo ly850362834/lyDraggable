@@ -24,7 +24,7 @@ function createdLayoutComponents(): any[]{
         }
     }
     const componentsArray: any[]=[];
-    const gird = new Gird('gird','栅格布局','layOut');
+    const gird = new Gird('gird','栅格布局','layout');
     componentsArray.push(gird);
     return componentsArray
 }
