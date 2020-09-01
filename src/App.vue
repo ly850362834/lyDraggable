@@ -13,8 +13,20 @@ import mains from "@/components/mains/mains.vue";
     mains
   }
 })
-export default class HelloWorld extends Vue {
+export default class App extends Vue {
   @Prop() private msg!: string;
+  created(){
+     function test() {
+         let result;
+         for (let i=0;i<10;i++) {
+             result.push(i);
+            if (i==5) {
+                return result
+            }
+         }
+     }
+     console.log(test())
+  }
 }
 </script>
 
