@@ -2,8 +2,9 @@
     <div>
         <el-input v-model="input" placeholder="请输入内容">
             <template slot="prepend">Http://</template>
+            <Button slot="append" icon="ios-search"></Button>
+            <Button slot="append" icon="ios-search"></Button>
         </el-input>
-        <i class="el-icon-delete"></i><i class="el-icon-circle-plus-outline"></i>
     </div>
 </template>
 

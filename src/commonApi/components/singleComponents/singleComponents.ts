@@ -6,7 +6,7 @@ function createdSingleComponents(): any[]{
         public comId: string;//组件Id，后面在初次拖入会进行赋值
         public options: Record<any, any>;//组件额外属性，不同组件里面不一样
         public label: string;
-        public  required='0';//是否必填，必填0，非必填1；默认非必填
+        public  required=true;//是否必填，必填0，非必填1；默认非必填
         readonly  type:  string;//组件类别（只读属性）
         readonly  name:  string;//组件名称（只读属性）
         readonly  comType: string='single';//组件性质类别（只读属性）
