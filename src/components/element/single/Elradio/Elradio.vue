@@ -1,6 +1,6 @@
 <template>
     <el-form-item :label="coms.label" :required="coms.required==0?false:true">
-        <el-radio v-model="coms.value" v-for="(item,index) in coms.options.children" :key="index">{{item.label}}</el-radio>
+        <el-radio v-model="coms.value" v-for="(item,index) in coms.options.children" :key="index" :label="item.value">{{item.label}}</el-radio>
     </el-form-item>
 </template>
 
