@@ -32,6 +32,8 @@ function createdSingleComponents(): any[]{
     class Radio extends SingleComponents{
         constructor(type: string,name: string,label: string) {
             super(type,name,label);
+            this.value='1';
+            this.options={children:[{label:'备选项',value:'1'},{label:'备选项',value:'2'}]}
         }
     }
     const input = new Input('input','输入框','输入框');//input输入框
