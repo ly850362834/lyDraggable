@@ -45,7 +45,7 @@
                 default:
             }
             this.$forceUpdate();
-            // console.log(this.list,999)
+            // console.log(this.list);
             // console.log(keyArr)
         }
 

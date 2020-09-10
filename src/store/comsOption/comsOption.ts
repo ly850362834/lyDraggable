@@ -1,26 +1,13 @@
 import {Commit} from 'vuex'
 import { getComsIndex } from "@/commonApi/common";
 const state: any={
-    formList: [],
+    formList: {children:[],options:{size:'mini'}},
     comInformation:{}
 }
 
 const mutations: any= {
     setOptions(states: any,comId: string){
-        // console.log(states,comId)
-        states.comInformation=getComsIndex(states.formList,comId);
-        // console.log(states.comInformation,999)
-        // states.comInformation.val='666';
-        // console.log(getComsIndex(states.formList,comId))
-        // states.formList.map(val=>{
-        //     if ()
-        // })
-        // for (let i =0,len=states.formList.length;i<len;i++) {
-        //     if (states.formList[i].children) {
-        //         for (let j =0,slen)
-        //     }
-        // }
-        // console.log(params,states.list)
+        states.comInformation=getComsIndex(states.formList.children,comId);
     }
 }
 const actions: any = {

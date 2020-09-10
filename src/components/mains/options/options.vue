@@ -5,7 +5,9 @@
         <el-tab-pane label="组件信息" name="first">
           <ElementOption :coms="coms"></ElementOption>
         </el-tab-pane>
-        <el-tab-pane label="表单信息" name="second">配置管理</el-tab-pane>
+        <el-tab-pane label="表单信息" name="second">
+          <FormOption :coms="coms"></FormOption>
+        </el-tab-pane>
       </el-tabs>
     </div>
   </div>
@@ -13,9 +15,11 @@
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator";
 import ElementOption from "@/components/mains/options/element/elementOption.vue"
+import FormOption from "@/components/mains/options/form/formOption.vue"
 @Component({
   components: {
-      ElementOption
+      ElementOption,
+      FormOption
   }
 })
 export default class Options extends Vue {
